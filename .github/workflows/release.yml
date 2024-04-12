@@ -33,9 +33,11 @@ jobs:
           node-version: 20.x
 
       - name: Go Mod
+        working-directory: ./provider
         run: go mod download
 
       - uses: goreleaser/goreleaser-action@v4
+        working-directory: ./provider
         with:
           distribution: goreleaser
           version: latest
@@ -44,6 +46,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
           AUR_KEY: ${{ secrets.AUR_KEY }}
 
+      - run: make build_nodejs
+
       - run: yarn npm publish
+        working-directory: ./sdk/nodejs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

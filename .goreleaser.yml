@@ -1,0 +1,26 @@
+archives:
+  - id: archive
+    name_template: "{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}"
+before:
+  hooks:
+    - make tfgen
+builds:
+  - binary: pulumi-resource-namecheap
+    dir: provider
+    goarch:
+      - amd64
+      - arm64
+    goos:
+      - darwin
+      - windows
+      - linux
+    ignore: []
+    ldflags:
+      - -X github.com/sst/pulumi-namecheap/provider/pkg/version.Version={{.Tag}}
+    main: ./cmd/pulumi-resource-namecheap/
+    sort: asc
+    use: git
+release:
+  disable: false
+snapshot:
+  name_template: "{{ .Tag }}-SNAPSHOT"
