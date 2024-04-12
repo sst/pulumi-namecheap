@@ -1,0 +1,37 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "namecheap_ns": {
+                "current": "namecheap:index/ns:Ns",
+                "fields": {
+                    "servers": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "namecheap_record": {
+                "current": "namecheap:index/record:Record"
+            }
+        }
+    },
+    "auto-settings": {},
+    "renames": {
+        "resources": {
+            "namecheap:index/ns:Ns": "namecheap_ns",
+            "namecheap:index/record:Record": "namecheap_record"
+        },
+        "renamedProperties": {
+            "namecheap:index/record:Record": {
+                "mxPref": "mx_pref"
+            },
+            "namecheap:index:Provider": {
+                "apiUser": "api_user",
+                "useSandbox": "use_sandbox"
+            }
+        },
+        "renamedConfigProperties": {
+            "apiUser": "api_user",
+            "useSandbox": "use_sandbox"
+        }
+    }
+}

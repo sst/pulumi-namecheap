@@ -1,0 +1,273 @@
+{
+    "name": "namecheap",
+    "description": "A Pulumi package for creating and managing namecheap cloud resources.",
+    "keywords": [
+        "sst-provider",
+        "namecheap",
+        "category/cloud"
+    ],
+    "homepage": "https://www.pulumi.com",
+    "license": "Apache-2.0",
+    "attribution": "This Pulumi package is based on the [`namecheap` Terraform Provider](https://github.com/terraform-providers/terraform-provider-namecheap).",
+    "repository": "https://github.com/sst/pulumi-namecheap",
+    "publisher": "sst-provider",
+    "meta": {
+        "moduleFormat": "(.*)(?:/[^/]*)"
+    },
+    "language": {
+        "csharp": {
+            "packageReferences": {
+                "Pulumi": "3.*"
+            },
+            "compatibility": "tfbridge20"
+        },
+        "go": {
+            "importBasePath": "github.com/sst/pulumi-namecheap/sdk/go/namecheap",
+            "generateResourceContainerTypes": true,
+            "generateExtraInputTypes": true
+        },
+        "nodejs": {
+            "packageDescription": "A Pulumi package for creating and managing namecheap cloud resources.",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-namecheap)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-namecheap` repo](https://github.com/sst/pulumi-namecheap/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-namecheap` repo](https://github.com/terraform-providers/terraform-provider-namecheap/issues).",
+            "dependencies": {
+                "@pulumi/pulumi": "^3.0.0"
+            },
+            "devDependencies": {
+                "@types/mime": "^2.0.0",
+                "@types/node": "^10.0.0"
+            },
+            "compatibility": "tfbridge20",
+            "disableUnionOutputTypes": true
+        },
+        "python": {
+            "requires": {
+                "pulumi": "\u003e=3.0.0,\u003c4.0.0"
+            },
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-namecheap)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-namecheap` repo](https://github.com/sst/pulumi-namecheap/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-namecheap` repo](https://github.com/terraform-providers/terraform-provider-namecheap/issues).",
+            "compatibility": "tfbridge20",
+            "pyproject": {}
+        }
+    },
+    "config": {
+        "variables": {
+            "apiUser": {
+                "type": "string",
+                "description": "A registered apiuser for namecheap\n"
+            },
+            "ip": {
+                "type": "string",
+                "description": "IP addess of the machine running terraform\n"
+            },
+            "token": {
+                "type": "string",
+                "description": "The token key for API operations.\n"
+            },
+            "useSandbox": {
+                "type": "boolean",
+                "description": "If true, use the namecheap sandbox\n"
+            },
+            "username": {
+                "type": "string",
+                "description": "A registered username for namecheap\n"
+            }
+        },
+        "defaults": [
+            "apiUser",
+            "ip",
+            "token",
+            "username"
+        ]
+    },
+    "provider": {
+        "description": "The provider type for the namecheap package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
+        "properties": {
+            "apiUser": {
+                "type": "string",
+                "description": "A registered apiuser for namecheap\n"
+            },
+            "ip": {
+                "type": "string",
+                "description": "IP addess of the machine running terraform\n"
+            },
+            "token": {
+                "type": "string",
+                "description": "The token key for API operations.\n"
+            },
+            "useSandbox": {
+                "type": "boolean",
+                "description": "If true, use the namecheap sandbox\n"
+            },
+            "username": {
+                "type": "string",
+                "description": "A registered username for namecheap\n"
+            }
+        },
+        "required": [
+            "apiUser",
+            "ip",
+            "token",
+            "username"
+        ],
+        "inputProperties": {
+            "apiUser": {
+                "type": "string",
+                "description": "A registered apiuser for namecheap\n"
+            },
+            "ip": {
+                "type": "string",
+                "description": "IP addess of the machine running terraform\n"
+            },
+            "token": {
+                "type": "string",
+                "description": "The token key for API operations.\n"
+            },
+            "useSandbox": {
+                "type": "boolean",
+                "description": "If true, use the namecheap sandbox\n"
+            },
+            "username": {
+                "type": "string",
+                "description": "A registered username for namecheap\n"
+            }
+        },
+        "requiredInputs": [
+            "apiUser",
+            "ip",
+            "token",
+            "username"
+        ]
+    },
+    "resources": {
+        "namecheap:index/ns:Ns": {
+            "properties": {
+                "domain": {
+                    "type": "string"
+                },
+                "servers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "domain",
+                "servers"
+            ],
+            "inputProperties": {
+                "domain": {
+                    "type": "string"
+                },
+                "servers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "requiredInputs": [
+                "domain",
+                "servers"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Ns resources.\n",
+                "properties": {
+                    "domain": {
+                        "type": "string"
+                    },
+                    "servers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "namecheap:index/record:Record": {
+            "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "hostname": {
+                    "type": "string"
+                },
+                "mxPref": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "ttl": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "address",
+                "domain",
+                "hostname",
+                "name",
+                "type"
+            ],
+            "inputProperties": {
+                "address": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "mxPref": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "ttl": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "requiredInputs": [
+                "address",
+                "domain",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Record resources.\n",
+                "properties": {
+                    "address": {
+                        "type": "string"
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "hostname": {
+                        "type": "string"
+                    },
+                    "mxPref": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "ttl": {
+                        "type": "integer"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

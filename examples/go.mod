@@ -1,3 +1,3 @@
-module github.com/pulumi/pulumi-xyz/examples
+module github.com/sst/pulumi-namecheap/examples
 
 go 1.21

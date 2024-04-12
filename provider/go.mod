@@ -1,11 +1,11 @@
-module github.com/pulumi/pulumi-xyz/provider
+module github.com/sst/pulumi-namecheap/provider
 
 go 1.21
 
 replace github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20230912190043-e6d96b3b8f7e
 
 require (
-	github.com/iwahbe/terraform-provider-xyz v0.0.0-20240313122825-ee5a73cbac8d
+	github.com/namecheap/terraform-provider-namecheap v1.6.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.69.0
 	github.com/pulumi/pulumi/sdk/v3 v3.98.0
 )
@@ -158,6 +158,7 @@ require (
 	github.com/muesli/cancelreader v0.2.2 // indirect
 	github.com/muesli/reflow v0.3.0 // indirect
 	github.com/muesli/termenv v0.15.2 // indirect
+	github.com/namecheap/go-namecheap-sdk v1.3.0 // indirect
 	github.com/natefinch/atomic v1.0.1 // indirect
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/opentracing/basictracer-go v1.1.0 // indirect
