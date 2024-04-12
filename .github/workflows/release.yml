@@ -32,9 +32,16 @@ jobs:
         with:
           node-version: 20.x
 
+      - name: Install pulumictl
+        uses: jaxxstorm/action-install-gh-release@v1.10.0
+        with:
+          repo: pulumi/pulumictl
+
       - name: Go Mod
         working-directory: ./provider
         run: go mod download
+
+      - run: make build_nodejs
 
       - uses: goreleaser/goreleaser-action@v4
         with:
@@ -44,8 +51,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
           AUR_KEY: ${{ secrets.AUR_KEY }}
-
-      - run: make build_nodejs
 
       - run: yarn npm publish
         working-directory: ./sdk/nodejs
