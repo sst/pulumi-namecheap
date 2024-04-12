@@ -41,7 +41,6 @@ jobs:
           distribution: goreleaser
           version: latest
           args: release --clean
-          workdir: ./provider
         env:
           GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
           AUR_KEY: ${{ secrets.AUR_KEY }}
