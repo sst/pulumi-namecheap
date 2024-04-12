@@ -18,8 +18,8 @@ builds:
     ldflags:
       - -X github.com/sst/pulumi-namecheap/provider/pkg/version.Version={{.Tag}}
     main: ./cmd/pulumi-resource-namecheap/
-    sort: asc
-    use: git
+    #sort: asc
+    #use: git
 release:
   disable: false
 snapshot:
