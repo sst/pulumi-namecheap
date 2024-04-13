@@ -1,5 +1,5 @@
 {
-    "name": "@pulumi/namecheap",
+    "name": "@sst-provider/namecheap",
     "version": "${VERSION}",
     "description": "A Pulumi package for creating and managing namecheap cloud resources.",
     "keywords": [
