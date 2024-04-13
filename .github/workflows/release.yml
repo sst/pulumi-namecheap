@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 20.x
           registry-url: "https://registry.npmjs.org"
-          scope: '@sst-provider'
+          scope: "@sst-provider"
 
       - name: Install pulumictl
         uses: jaxxstorm/action-install-gh-release@v1.10.0
@@ -45,14 +45,17 @@ jobs:
 
       - run: make build_nodejs
 
-      - uses: goreleaser/goreleaser-action@v4
-        with:
-          distribution: goreleaser
-          version: latest
-          args: release --clean
-        env:
-          GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
-          AUR_KEY: ${{ secrets.AUR_KEY }}
+      #- uses: goreleaser/goreleaser-action@v4
+      #  with:
+      #    distribution: goreleaser
+      #    version: latest
+      #    args: release --clean
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
+      #    AUR_KEY: ${{ secrets.AUR_KEY }}
+
+      - run: yarn
+        working-directory: ./sdk/nodejs
 
       - run: yarn publish
         working-directory: ./sdk/nodejs
