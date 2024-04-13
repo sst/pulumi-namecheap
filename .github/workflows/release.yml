@@ -58,5 +58,5 @@ jobs:
         uses: JS-DevTools/npm-publish@v2
         with:
           access: "public"
-          token: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.NPM_TOKEN_SST_PROVIDER }}
           package: ${{ github.workspace }}/sdk/nodejs/bin/package.json
