@@ -54,10 +54,7 @@ jobs:
       #    GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
       #    AUR_KEY: ${{ secrets.AUR_KEY }}
 
-      - run: yarn
-        working-directory: ./sdk/nodejs
-
-      - run: yarn publish
+      - run: npm run publish
         working-directory: ./sdk/nodejs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
