@@ -54,7 +54,9 @@ jobs:
       #    GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
       #    AUR_KEY: ${{ secrets.AUR_KEY }}
 
-      - run: npm publish
-        working-directory: ./sdk/nodejs
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          access: "public"
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ${{ github.workspace }}/sdk/nodejs/bin/package.json
