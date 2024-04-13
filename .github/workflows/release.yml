@@ -45,14 +45,14 @@ jobs:
 
       - run: make build_nodejs
 
-      #- uses: goreleaser/goreleaser-action@v4
-      #  with:
-      #    distribution: goreleaser
-      #    version: latest
-      #    args: release --clean
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
-      #    AUR_KEY: ${{ secrets.AUR_KEY }}
+      - uses: goreleaser/goreleaser-action@v4
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.SST_GITHUB_TOKEN }}
+          AUR_KEY: ${{ secrets.AUR_KEY }}
 
       - name: Publish
         uses: JS-DevTools/npm-publish@v2
