@@ -10,6 +10,7 @@
     "license": "Apache-2.0",
     "attribution": "This Pulumi package is based on the [`namecheap` Terraform Provider](https://github.com/terraform-providers/terraform-provider-namecheap).",
     "repository": "https://github.com/sst/pulumi-namecheap",
+    "pluginDownloadURL": "github://api.github.com/sst",
     "publisher": "sst-provider",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"

@@ -23,6 +23,7 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "namecheap"
+        "name": "namecheap",
+        "server": "github://api.github.com/sst"
     }
 }
